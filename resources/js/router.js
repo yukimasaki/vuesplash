@@ -23,7 +23,8 @@ const routes = [
 
 // VueRouterインスタンスを作成する
 const router = new VueRouter({
-  routes
+    mode:'history',
+    routes
 })
 
 // VueRouterインスタンスをエクスポートする
