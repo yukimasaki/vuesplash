@@ -2131,6 +2131,9 @@ var render = function render() {
     staticClass: "tab"
   }, [_c("li", {
     staticClass: "tab__item",
+    "class": {
+      "tab__item--active": _vm.tab === 1
+    },
     on: {
       click: function click($event) {
         _vm.tab = 1;
@@ -2138,6 +2141,9 @@ var render = function render() {
     }
   }, [_vm._v("Login")]), _vm._v(" "), _c("li", {
     staticClass: "tab__item",
+    "class": {
+      "tab__item--active": _vm.tab === 2
+    },
     on: {
       click: function click($event) {
         _vm.tab = 2;
