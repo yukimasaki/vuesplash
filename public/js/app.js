@@ -2143,7 +2143,23 @@ var render = function render() {
         _vm.tab = 2;
       }
     }
-  }, [_vm._v("Register")])]), _vm._v("\n  " + _vm._s(_vm.tab) + "\n")]);
+  }, [_vm._v("Register")])]), _vm._v(" "), _c("div", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: _vm.tab === 1,
+      expression: "tab === 1"
+    }],
+    staticClass: "panel"
+  }, [_vm._v("Login Form")]), _vm._v(" "), _c("div", {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: _vm.tab === 2,
+      expression: "tab === 2"
+    }],
+    staticClass: "panel"
+  }, [_vm._v("Register Form")])]);
 };
 
 var staticRenderFns = [];
