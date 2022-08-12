@@ -3,10 +3,10 @@ import Vue from 'vue'
 
 // ルーティングの定義をインポートする
 import router from './router'
-// ルートコンポーネントをインポートする
-import App from './App.vue'
 // Vuexをインポート数R
 import store from './store'
+// ルートコンポーネントをインポートする
+import App from './App.vue'
 
 require('./bootstrap');
 
