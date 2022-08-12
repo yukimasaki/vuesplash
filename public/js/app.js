@@ -1950,8 +1950,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      tab: 1
+      tab: 1,
+      loginForm: {
+        email: '',
+        password: ''
+      }
     };
+  },
+  methods: {
+    login: function login() {
+      console.log(this.loginForm);
+    }
   }
 });
 
@@ -2157,7 +2166,67 @@ var render = function render() {
       expression: "tab === 1"
     }],
     staticClass: "panel"
-  }, [_vm._v("Login Form")]), _vm._v(" "), _c("div", {
+  }, [_c("form", {
+    staticClass: "form",
+    on: {
+      submit: function submit($event) {
+        $event.preventDefault();
+        return _vm.login.apply(null, arguments);
+      }
+    }
+  }, [_c("label", {
+    attrs: {
+      "for": "login-email"
+    }
+  }, [_vm._v("Email")]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.loginForm.email,
+      expression: "loginForm.email"
+    }],
+    staticClass: "form__item",
+    attrs: {
+      type: "text",
+      id: "login-email"
+    },
+    domProps: {
+      value: _vm.loginForm.email
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+
+        _vm.$set(_vm.loginForm, "email", $event.target.value);
+      }
+    }
+  }), _vm._v(" "), _c("label", {
+    attrs: {
+      "for": "login-password"
+    }
+  }, [_vm._v("Password")]), _vm._v(" "), _c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.loginForm.password,
+      expression: "loginForm.password"
+    }],
+    staticClass: "form__item",
+    attrs: {
+      type: "password",
+      id: "login-password"
+    },
+    domProps: {
+      value: _vm.loginForm.password
+    },
+    on: {
+      input: function input($event) {
+        if ($event.target.composing) return;
+
+        _vm.$set(_vm.loginForm, "password", $event.target.value);
+      }
+    }
+  }), _vm._v(" "), _vm._m(0)])]), _vm._v(" "), _c("div", {
     directives: [{
       name: "show",
       rawName: "v-show",
@@ -2168,7 +2237,19 @@ var render = function render() {
   }, [_vm._v("Register Form")])]);
 };
 
-var staticRenderFns = [];
+var staticRenderFns = [function () {
+  var _vm = this,
+      _c = _vm._self._c;
+
+  return _c("div", {
+    staticClass: "form__button"
+  }, [_c("button", {
+    staticClass: "button button--inverse",
+    attrs: {
+      type: "submit"
+    }
+  }, [_vm._v("login")])]);
+}];
 render._withStripped = true;
 
 
