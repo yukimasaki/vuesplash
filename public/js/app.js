@@ -1956,6 +1956,11 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  computed: {
+    isLogin: function isLogin() {
+      return this.$store.getters['auth/check'];
+    }
+  },
   methods: {
     logout: function logout() {
       var _this = this;
@@ -2175,12 +2180,12 @@ var render = function render() {
 
   return _c("footer", {
     staticClass: "footer"
-  }, [_c("button", {
+  }, [_vm.isLogin ? _c("button", {
     staticClass: "button button--link",
     on: {
       click: _vm.logout
     }
-  }, [_vm._v("Logout")]), _vm._v(" "), _c("RouterLink", {
+  }, [_vm._v("\n    Logout\n  ")]) : _c("RouterLink", {
     staticClass: "button button--link",
     attrs: {
       to: "/login"
