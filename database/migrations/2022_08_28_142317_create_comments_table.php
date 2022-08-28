@@ -14,10 +14,18 @@ class CreateCommentsTable extends Migration
     public function up()
     {
         Schema::create('comments', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->engine = 'InnoDB';
+            $table->increments('id');
+            $table->string('photo_id');
+            $table->unsignedBigInteger('user_id');
+            $table->text('content');
             $table->timestamps();
+    
+            $table->foreign('photo_id')->references('id')->on('photos');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
+    
 
     /**
      * Reverse the migrations.
